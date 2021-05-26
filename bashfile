@@ -83,41 +83,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-home(){
-        echo "at home"
-        mv ~/.m2/settings.xml ~/.m2/settings_home.xml
-        echo "renamed settings.xml file"
-}
-
-office(){
-        echo "at office"
-        mv ~/.m2/settings_home.xml ~/.m2/settings.xml
-        echo "renamed settings.xml file"
-}
-
 alias pretty='python -m json.tool'
-
-token(){
-        echo "getting token"
-        curl https://171-ZQM-109.mktorest.com/identity/oauth/token\?grant_type=client_credentials\&client_id=3c47e4f4-58b9-4058-944e-872eb883e113\&client_secret=EHUHZi4drfXhqlaH1CUlbwcMrLWQNvxj | pretty | grep "access_token"
-}
-
-tokenSandbox(){
-        echo "getting token"
-        curl https://412-JIH-802.mktorest.com/identity/oauth/token\?grant_type=client_credentials\&client_id=8d9f485a-700e-4c0c-be95-f7207af10e74\&client_secret=V8AfenhgZZrwvGCEvB656EU79Af0WlZz | pretty | grep "access_token"
-}
-
-toggleWifi(){
-	networksetup -getairportpower en0 | grep “On” && networksetup -setairportpower en0 off || networksetup -setairportpower en0 on
-}
-
-tidal(){
-	cd "/Users/jmodi/Documents/Tidal/TES Java Client/" && ./tesclient.sh
-}
-
-export ENV=test
-export winkel_env=test
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home"
 
 alias glg='git log --graph --abbrev-commit --decorate --format=format:"%C(green)%h%C(reset) - %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(red)%d%C(reset)" --all'
 alias glb='git log --graph --abbrev-commit --decorate --format=format:"%C(green)%h%C(reset) - %C(white)%s%C(reset) %C(reset)%C(red)%d%C(reset)" --all'
